@@ -39,17 +39,6 @@ public class Drivetrain extends Subsystem {
 		rightSlave = new WPI_TalonSRX(RobotMap.RIGHT_SLAVE);
 		rightSlave.set(ControlMode.Follower, RobotMap.RIGHT_MASTER);
 		
-		//config pid values (set to zero)
-		leftMaster.config_kP(0, NumberConstants.pTalonDrive, 0);
-		leftMaster.config_kI(0, NumberConstants.iTalonDrive, 0);
-		leftMaster.config_kD(0, NumberConstants.dTalonDrive, 0);
-		leftMaster.config_kF(0, NumberConstants.fTalonDrive, 0);
-
-		rightMaster.config_kP(0, NumberConstants.pTalonDrive, 0);
-		rightMaster.config_kI(0, NumberConstants.iTalonDrive, 0);
-		rightMaster.config_kD(0, NumberConstants.dTalonDrive, 0);
-		rightMaster.config_kF(0, NumberConstants.fTalonDrive, 0);
-		
 		//set to use slot 0
 		leftMaster.selectProfileSlot(0, 0);
 		rightMaster.selectProfileSlot(0, 0);
@@ -67,6 +56,12 @@ public class Drivetrain extends Subsystem {
     //run right side of drive
     public void runRightDrive(double output) {
     	rightMaster.set(output);
+    }
+    
+    //stop drive
+    public void stopDrive() {
+    	leftMaster.set(0);
+    	rightMaster.set(0);
     }
     
     //ENCODER
