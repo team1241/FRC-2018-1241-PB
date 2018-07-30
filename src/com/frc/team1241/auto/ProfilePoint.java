@@ -1,5 +1,11 @@
 package com.frc.team1241.auto;
 
+/**
+ * ProfilePoint
+ * @author Neil
+ * Object containing setpoints that robot will attempt to reach at every given timestamp in the trajectory.
+ * A profile consists of an array of ProfilePoints.
+ */
 public class ProfilePoint {
 
 	private double pos; // position in inches

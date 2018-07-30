@@ -5,11 +5,14 @@ import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.frc.team1241.robot.NumberConstants;
 import com.frc.team1241.robot.RobotMap;
+import com.frc.team1241.robot.commands.ArcadeDrive;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- *
+ * Drivetrain
+ * @author Neil
+ * This drivetrain contains 4 talons with 2 mag encoders and 1 NavX Gyro.
  */
 public class Drivetrain extends Subsystem {	
 	
@@ -18,6 +21,7 @@ public class Drivetrain extends Subsystem {
 	private WPI_TalonSRX rightMaster;
 	private WPI_TalonSRX rightSlave;
 	
+	//create the drivetrain class
 	public Drivetrain() {
 		//left master
 		leftMaster = new WPI_TalonSRX(RobotMap.LEFT_MASTER);
@@ -45,7 +49,7 @@ public class Drivetrain extends Subsystem {
 	}
 	
     public void initDefaultCommand() {
-        
+        setDefaultCommand(new ArcadeDrive());
     }
     
     //run left side of drive

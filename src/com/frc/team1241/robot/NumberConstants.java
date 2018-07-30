@@ -2,6 +2,7 @@ package com.frc.team1241.robot;
 
 public class NumberConstants {
 
+	//robot constants
 	public static final double TOP_SPEED = 8.08; // {robot} / real world
 	public static final double WHEELBASE = 24; // width between contact points of left and right wheel in inches
 	public static final double MAX_TORQUE = 796.0467; // max torque motor can output in inch-lbs
