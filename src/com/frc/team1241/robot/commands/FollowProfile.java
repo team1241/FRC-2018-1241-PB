@@ -23,7 +23,7 @@ public class FollowProfile extends Command {
     public FollowProfile(DriveProfile auto) {
         profile = auto;
         segmentTime = profile.getTotalTime() / profile.getLeftProfile().length;
-        
+         
     	requires(Robot.drive);
     }
 
